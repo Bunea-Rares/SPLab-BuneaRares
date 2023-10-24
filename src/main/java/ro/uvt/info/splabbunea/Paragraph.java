@@ -18,4 +18,8 @@ public class Paragraph implements Element{
     public void print() {
         System.out.println(text);
     }
+
+    public Paragraph(String text) {
+        this.text = text;
+    }
 }

@@ -16,4 +16,8 @@ public class Image implements Element{
     public void print() {
         System.out.println(imageName);
     }
+
+    public Image(String imageName) {
+        this.imageName = imageName;
+    }
 }

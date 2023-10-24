@@ -18,4 +18,8 @@ public class SubChapter implements Element{
     public void print() {
         System.out.println(name);
     }
+
+    public SubChapter(String name) {
+        this.name = name;
+    }
 }

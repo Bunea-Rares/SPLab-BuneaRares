@@ -5,4 +5,8 @@ public class Author {
     public void print() {
         System.out.println(name);
     }
+
+    public Author(String name) {
+        this.name = name;
+    }
 }
