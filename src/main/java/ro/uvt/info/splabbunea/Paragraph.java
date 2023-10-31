@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Paragraph implements Element{
     private String text;
-
+    private IAlignStrategy alignStrategy;
     @Override
     public void add(Element e) {
 
@@ -16,10 +16,20 @@ public class Paragraph implements Element{
     }
 
     public void print() {
-        System.out.println(text);
+        if(alignStrategy == null)
+            System.out.println(text);
+        else
+            alignStrategy.render(this, 20);
     }
 
     public Paragraph(String text) {
         this.text = text;
     }
+    public void setAlignStrategy(IAlignStrategy alignStrategy) {
+        this.alignStrategy = alignStrategy;
+    }
+    public String getText() {
+        return this.text;
+    }
+
 }
