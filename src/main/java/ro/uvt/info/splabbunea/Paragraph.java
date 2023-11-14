@@ -2,8 +2,17 @@ package ro.uvt.info.splabbunea;
 
 import java.util.List;
 
-public class Paragraph implements Element{
+public class Paragraph implements Element, Visitee{
     private String text;
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public IAlignStrategy getAlignStrategy() {
+        return alignStrategy;
+    }
+
     private IAlignStrategy alignStrategy;
     @Override
     public void add(Element e) {
@@ -32,4 +41,8 @@ public class Paragraph implements Element{
         return this.text;
     }
 
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitParagraph(this);
+    }
 }

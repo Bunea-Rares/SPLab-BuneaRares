@@ -1,6 +1,14 @@
 package ro.uvt.info.splabbunea;
 
 public class Image implements Element{
+    public String getImageName() {
+        return imageName;
+    }
+
+    public void setImageName(String imageName) {
+        this.imageName = imageName;
+    }
+
     private String imageName;
 
     @Override
