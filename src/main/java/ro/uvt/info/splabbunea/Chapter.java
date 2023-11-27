@@ -1,5 +1,7 @@
 package ro.uvt.info.splabbunea;
 
+import ro.uvt.info.splabbunea.models.Paragraph;
+
 import java.util.List;
 
 public class Chapter {

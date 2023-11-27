@@ -1,10 +1,14 @@
-package ro.uvt.info.splabbunea;
+package ro.uvt.info.splabbunea.models;
+
+import ro.uvt.info.splabbunea.models.Element;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Sections implements Element{
+public class Section implements Element, Visitee {
     public String title;
+    List<Element> elementList = new ArrayList<Element>();
+
 
     public String getTitle() {
         return title;
@@ -22,27 +26,23 @@ public class Sections implements Element{
         this.elementList = elementList;
     }
 
-    List<Element> elementList = new ArrayList<Element>();
     @Override
     public void add(Element e) {
        elementList.add(e);
     }
-
 
     @Override
     public void remove(Element e) {
         elementList.remove(e);
     }
 
-    @Override
-    public void print() {
-        System.out.println(title);
-        for (Element element : elementList) {
-            element.print();
-        }
+
+    public Section(String title) {
+        this.title = title;
     }
 
-    public Sections(String title) {
-        this.title = title;
+    @Override
+    public void accept(Visitor v) {
+        v.visitSection(this);
     }
 }

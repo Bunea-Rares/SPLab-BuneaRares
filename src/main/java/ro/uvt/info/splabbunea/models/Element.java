@@ -1,6 +1,4 @@
-package ro.uvt.info.splabbunea;
-
-import java.util.List;
+package ro.uvt.info.splabbunea.models;
 
 public interface Element {
 
@@ -9,5 +7,4 @@ public interface Element {
         return this;
     };
     void remove(Element e);
-    void print();
 }

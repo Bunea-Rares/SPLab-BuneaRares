@@ -1,8 +1,8 @@
 package ro.uvt.info.splabbunea;
 
-import java.util.List;
+import ro.uvt.info.splabbunea.models.Element;
 
-public class SubChapter implements Element{
+public class SubChapter implements Element {
     private String name;
 
     @Override

@@ -1,7 +1,10 @@
 package ro.uvt.info.splabbunea;
 
 
-public class AlignLeft implements IAlignStrategy {
+import ro.uvt.info.splabbunea.models.Paragraph;
+import ro.uvt.info.splabbunea.services.AlignStrategy;
+
+public class AlignLeft implements AlignStrategy {
     @Override
     public void render(Paragraph p, int spaces) {
         String text = p.getText();

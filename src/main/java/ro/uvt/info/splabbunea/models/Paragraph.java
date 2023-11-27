@@ -1,19 +1,19 @@
-package ro.uvt.info.splabbunea;
+package ro.uvt.info.splabbunea.models;
 
-import java.util.List;
+import ro.uvt.info.splabbunea.services.AlignStrategy;
 
-public class Paragraph implements Element, Visitee{
+public class Paragraph implements Element, Visitee {
     private String text;
 
     public void setText(String text) {
         this.text = text;
     }
 
-    public IAlignStrategy getAlignStrategy() {
+    public AlignStrategy getAlignStrategy() {
         return alignStrategy;
     }
 
-    private IAlignStrategy alignStrategy;
+    private AlignStrategy alignStrategy;
     @Override
     public void add(Element e) {
 
@@ -34,7 +34,7 @@ public class Paragraph implements Element, Visitee{
     public Paragraph(String text) {
         this.text = text;
     }
-    public void setAlignStrategy(IAlignStrategy alignStrategy) {
+    public void setAlignStrategy(AlignStrategy alignStrategy) {
         this.alignStrategy = alignStrategy;
     }
     public String getText() {

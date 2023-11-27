@@ -1,4 +1,4 @@
-package ro.uvt.info.splabbunea;
+package ro.uvt.info.splabbunea.models;
 
 public class Author {
     private String name;
