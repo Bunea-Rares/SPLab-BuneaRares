@@ -4,11 +4,17 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book extends Section implements Visitee {
-//    private List<Element> elementsList = new ArrayList<Element>();
-    private List<Author> authorList = new ArrayList<Author>();
+    private final List<Author> authorList = new ArrayList<Author>();
 
-    public Book(String title) {
+    public int getId() {
+        return id;
+    }
+
+    private int id;
+
+    public Book(String title, Integer id) {
         super(title);
+        this.id = id;
     }
 
     public void addAuthor(Author author) {
@@ -23,9 +29,4 @@ public class Book extends Section implements Visitee {
     public void accept(Visitor v) {
         v.visitBook(this);
     }
-    //    public void addContent(Element element) {
-//        elementsList.add(element);
-//    }
-
-
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Section implements Element, Visitee {
     public String title;
-    List<Element> elementList = new ArrayList<Element>();
+    protected List<Element> elementList = new ArrayList<Element>();
 
 
     public String getTitle() {

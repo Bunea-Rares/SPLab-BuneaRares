@@ -21,10 +21,6 @@ public class Image implements Element, Picture, Visitee {
 
     }
     @Override
-    public Element getElement() {
-        return Element.super.getElement();
-    }
-    @Override
     public void remove(Element e) {
 
     }
