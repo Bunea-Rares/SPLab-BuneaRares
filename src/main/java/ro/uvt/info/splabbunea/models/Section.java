@@ -40,6 +40,7 @@ public class Section implements Element, Visitee {
     public Section(String title) {
         this.title = title;
     }
+    public Section(){}
 
     @Override
     public void accept(Visitor v) {

@@ -1,20 +1,27 @@
 package ro.uvt.info.splabbunea.models;
 
+import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@NoArgsConstructor(force = true)
 public class Book extends Section implements Visitee {
+    @ManyToMany(targetEntity = Author.class)
     private final List<Author> authorList = new ArrayList<Author>();
 
     public int getId() {
         return id;
     }
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    public Book(String title, Integer id) {
+    public Book(String title) {
         super(title);
-        this.id = id;
     }
 
     public void addAuthor(Author author) {

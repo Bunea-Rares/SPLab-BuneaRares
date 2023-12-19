@@ -2,6 +2,7 @@ package ro.uvt.info.splabbunea.services;
 
 import org.springframework.stereotype.Service;
 import ro.uvt.info.splabbunea.models.Book;
+import ro.uvt.info.splabbunea.persistance.BooksRepository;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -10,23 +11,25 @@ import java.util.Optional;
 
 @Service
 public class BookService {
-    private List<Book> bookList = new ArrayList<>();
+    private final BooksRepository booksRepository;
+    public BookService(BooksRepository booksRepository) {
+        this.booksRepository = booksRepository;
+    }
 
-
-    public List<Book> getAllBooks() {
-        return bookList;
+    public List<Book> getAllBooks(){
+        return booksRepository.findAll();
     }
 
     public Optional<Book> getBookById(Integer id) {
-        return bookList.stream().filter(book -> book.getId() == id).findFirst();
+        return booksRepository.findById(id);
     }
 
     public void addBook(Book book) {
-        bookList.add(book);
+        booksRepository.save(book);
     }
 
     public void editBook(Book book) {
-        Optional<Book> bookToEdit = getBookById(book.getId());
+        Optional<Book> bookToEdit = booksRepository.findById(book.getId());
 
         bookToEdit.ifPresent(b -> {
             // Update the title of the found book
@@ -35,13 +38,6 @@ public class BookService {
     }
 
     public void deleteBook(Integer id) {
-        Iterator<Book> iterator = bookList.iterator();
-        while (iterator.hasNext()) {
-            Book book = iterator.next();
-            if (book.getId() == id) {
-                iterator.remove();
-                break;
-            }
-        }
+
     }
 }
