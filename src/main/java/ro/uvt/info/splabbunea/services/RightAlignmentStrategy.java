@@ -9,7 +9,7 @@ public class RightAlignmentStrategy implements AlignStrategy{
         String[] words = text.split(" ");
         int currentLineLength = 0;
         for (String word : words) {
-            int wordLength = word.length() + 1; // Include a space after the word
+            int wordLength = word.length() + 1;
             if (currentLineLength + wordLength <= spaces) {
                 currentLineLength += wordLength;
             } else {

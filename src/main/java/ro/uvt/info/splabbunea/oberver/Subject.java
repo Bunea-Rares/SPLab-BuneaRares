@@ -1,13 +1,11 @@
 package ro.uvt.info.splabbunea.oberver;
 
-import java.util.List;
+import ro.uvt.info.splabbunea.models.Book;
 
-public class Subject {
-    public List<Observer> observerList;
-    public void registerObserver(Observer observer) {
-        observerList.add(observer);
-    }
-    public void notifyObservers(){
-        observerList.forEach(observer -> {observer.update();});
-    }
+public interface Subject {
+    void attach(Observer observer);
+
+    void detach(Observer observer);
+
+    void notifyObservers(Book book);
 }

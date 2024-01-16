@@ -1,14 +1,16 @@
 package ro.uvt.info.splabbunea.models;
 
+import jakarta.persistence.*;
 import ro.uvt.info.splabbunea.models.Element;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class Section implements Element, Visitee {
-    public String title;
-    protected List<Element> elementList = new ArrayList<Element>();
+    private int id;
 
+    public String title;
+
+    protected List<Element> elementList = new ArrayList<>();
 
     public String getTitle() {
         return title;

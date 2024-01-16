@@ -9,6 +9,7 @@ import java.util.List;
 @Entity
 @NoArgsConstructor(force = true)
 public class Book extends Section implements Visitee {
+
     @ManyToMany(targetEntity = Author.class)
     private final List<Author> authorList = new ArrayList<Author>();
 
@@ -19,9 +20,13 @@ public class Book extends Section implements Visitee {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    @Column(name = "titlu")
+    public String titlu;
+
 
     public Book(String title) {
         super(title);
+        this.titlu = title;
     }
 
     public void addAuthor(Author author) {

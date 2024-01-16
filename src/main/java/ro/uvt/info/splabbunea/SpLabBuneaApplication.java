@@ -47,5 +47,7 @@ public class SpLabBuneaApplication {
 // One can also request an instance from DI context by name
         c = (ClientComponent)context.getBean(ClientComponent.class);
         c.operation();
+
+
     }
 }

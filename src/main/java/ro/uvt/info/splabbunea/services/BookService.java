@@ -32,12 +32,15 @@ public class BookService {
         Optional<Book> bookToEdit = booksRepository.findById(book.getId());
 
         bookToEdit.ifPresent(b -> {
-            // Update the title of the found book
-            b.setTitle(book.title);
+            b.titlu = (book.titlu);
+            booksRepository.save(b);
         });
     }
 
     public void deleteBook(Integer id) {
-
+        Optional<Book> bookToEdit = booksRepository.findById(id);
+        bookToEdit.ifPresent(b -> {
+            booksRepository.delete(b);
+        });
     }
 }
